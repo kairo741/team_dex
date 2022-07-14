@@ -19,6 +19,12 @@ class AppTextStyles {
     fontWeight: FontWeight.w600,
   );
 
+  static TextStyle pokemonType = const TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  );
+
   static TextStyle titleBold = const TextStyle(
     color: Colors.white,
     fontSize: 20,

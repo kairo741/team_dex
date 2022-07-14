@@ -4,6 +4,7 @@ import 'package:team_dex/core/controller/pokemon_controller.dart';
 import 'package:team_dex/ui/theme/app_text_styles.dart';
 
 import '../../../core/model/dto/pokemon_dto.dart';
+import 'pokemon_type_tile.dart';
 
 class PokemonSquareTile extends StatelessWidget {
   final PokemonDTO pokemon;
@@ -22,8 +23,8 @@ class PokemonSquareTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           color: _controller.getColorByPokemonType(pokemon.types[0])),
       child: Column(
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
               padding: const EdgeInsets.only(right: 10),
@@ -36,10 +37,39 @@ class PokemonSquareTile extends StatelessWidget {
             toBeginningOfSentenceCase(pokemon.name).toString(),
             style: AppTextStyles.pokemonName,
           ),
-          Container(
-            alignment: Alignment.bottomRight,
-            width: 200,
-            child: Image.network(pokemon.sprites.frontDefault),
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Flexible(
+                flex: 1,
+                fit: FlexFit.tight,
+                child: ListView.separated(
+                  shrinkWrap: true,
+                  itemCount: pokemon.types.length,
+                  itemBuilder: (context, index) =>
+                      PokemonTypeTile(typeDTO: pokemon.types[index]),
+                  separatorBuilder: (BuildContext context, int index) =>
+                      const SizedBox(
+                    height: 4,
+                  ),
+                ),
+              ),
+              Flexible(
+                flex: 1,
+                fit: FlexFit.loose,
+                child: Container(
+                  alignment: Alignment.bottomRight,
+                  child: Image.network(
+                    (pokemon.sprites.artworkFrontDefault ??
+                        pokemon.sprites.frontDefault),
+                    fit: BoxFit.fitHeight,
+                    // loadingBuilder: (context, child, loadingProgress) =>
+                    //     const CircularProgressIndicator(),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
