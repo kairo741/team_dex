@@ -1,14 +1,12 @@
 import 'package:team_dex/core/model/dto/pokemon_dto.dart';
-
-import 'dio_config.dart';
-import 'utils/constants.dart';
+import 'package:team_dex/core/model/service/pokemon_service.dart';
 
 class PokemonController {
-  getPokemonByPokedexNumber(int number) async {
-    String path = PATH_POKEMON;
-    var dio = await DioConfig.builderConfig();
-    var response = await dio.get('$path/2');
+  final PokemonService _service = PokemonService();
 
-    return PokemonDTO.fromJson(response.data);
+  Future<PokemonDTO> getPokemonByPokedexNumber(int number) async {
+    var pokemon = await _service.getPokemonByPokedexNumber(number);
+
+    return pokemon;
   }
 }

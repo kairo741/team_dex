@@ -10,7 +10,8 @@ class PokemonSquareTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: const Text("aaa"),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+      child: Image.network(pokemon.sprites.frontDefault),
     );
   }
 }
