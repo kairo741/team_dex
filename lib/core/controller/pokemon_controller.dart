@@ -1,9 +1,9 @@
 import 'dart:ui';
 
-import 'package:team_dex/core/controller/utils/constants.dart';
 import 'package:team_dex/core/model/dto/pokemon_dto.dart';
 import 'package:team_dex/core/model/service/pokemon_service.dart';
 
+import '../../ui/theme/colors.dart';
 import '../model/dto/pokemon_type_dto.dart';
 
 class PokemonController {
@@ -18,44 +18,44 @@ class PokemonController {
   Color getColorByPokemonType(PokemonTypeDTO type) {
     switch (type.name.toLowerCase()) {
       case 'normal':
-        return TYPE_COLOR_NORMAL;
+        return typeColorNormal;
       case 'grass':
-        return TYPE_COLOR_GRASS;
+        return typeColorGrass;
       case 'fire':
-        return TYPE_COLOR_FIRE;
+        return typeColorFire;
       case 'water':
-        return TYPE_COLOR_WATER;
+        return typeColorWater;
       case 'electric':
-        return TYPE_COLOR_ELECTRIC;
+        return typeColorElectric;
       case 'ice':
-        return TYPE_COLOR_ICE;
+        return typeColorIce;
       case 'fighting':
-        return TYPE_COLOR_FIGHTING;
+        return typeColorFighting;
       case 'poison':
-        return TYPE_COLOR_POISON;
+        return typeColorPoison;
       case 'ground':
-        return TYPE_COLOR_GROUND;
+        return typeColorGround;
       case 'flying':
-        return TYPE_COLOR_FLYING;
+        return typeColorFlying;
       case 'psychic':
-        return TYPE_COLOR_PSYCHIC;
+        return typeColorPsychic;
       case 'bug':
-        return TYPE_COLOR_BUG;
+        return typeColorBug;
       case 'rock':
-        return TYPE_COLOR_ROCK;
+        return typeColorRock;
       case 'ghost':
-        return TYPE_COLOR_GHOST;
+        return typeColorGhost;
       case 'dragon':
-        return TYPE_COLOR_DRAGON;
+        return typeColorDragon;
       case 'dark':
-        return TYPE_COLOR_DARK;
+        return typeColorDark;
       case 'steel':
-        return TYPE_COLOR_STEEL;
+        return typeColorSteel;
       case 'fairy':
-        return TYPE_COLOR_FAIRY;
+        return typeColorFairy;
 
       default:
-        return TYPE_COLOR_UNKNOWN;
+        return typeColorUnknown;
     }
   }
 }
