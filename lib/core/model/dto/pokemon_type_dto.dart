@@ -1,4 +1,5 @@
 class PokemonTypeDTO {
+  static const String TYPE = "type";
   static const String NAME = "name";
   static const String URL = "url";
 
@@ -11,7 +12,7 @@ class PokemonTypeDTO {
   });
 
   static PokemonTypeDTO fromJson(Map<String, dynamic> json) =>
-      PokemonTypeDTO(name: json[NAME] as String,url: json[URL]);
+      PokemonTypeDTO(name: json[TYPE][NAME] as String,url: json[TYPE][URL]);
 
   Map<String, dynamic> toJson() {
     return {
