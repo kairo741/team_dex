@@ -21,8 +21,41 @@ class PokemonController {
         return TYPE_COLOR_NORMAL;
       case 'grass':
         return TYPE_COLOR_GRASS;
+      case 'fire':
+        return TYPE_COLOR_FIRE;
+      case 'water':
+        return TYPE_COLOR_WATER;
+      case 'electric':
+        return TYPE_COLOR_ELECTRIC;
+      case 'ice':
+        return TYPE_COLOR_ICE;
+      case 'fighting':
+        return TYPE_COLOR_FIGHTING;
+      case 'poison':
+        return TYPE_COLOR_POISON;
+      case 'ground':
+        return TYPE_COLOR_GROUND;
+      case 'flying':
+        return TYPE_COLOR_FLYING;
+      case 'psychic':
+        return TYPE_COLOR_PSYCHIC;
+      case 'bug':
+        return TYPE_COLOR_BUG;
+      case 'rock':
+        return TYPE_COLOR_ROCK;
+      case 'ghost':
+        return TYPE_COLOR_GHOST;
+      case 'dragon':
+        return TYPE_COLOR_DRAGON;
+      case 'dark':
+        return TYPE_COLOR_DARK;
+      case 'steel':
+        return TYPE_COLOR_STEEL;
+      case 'fairy':
+        return TYPE_COLOR_FAIRY;
+
       default:
-        return TYPE_COLOR_GRASS;
+        return TYPE_COLOR_UNKNOWN;
     }
   }
 }
