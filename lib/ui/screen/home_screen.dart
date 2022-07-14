@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
       setState(() {
         _loading = true;
       });
-      var pokemon = await _pokemonController.getPokemonByPokedexNumber(10);
+      var pokemon = await _pokemonController.getPokemonByPokedexNumber(1);
 
       setState(() {
         _loading = false;
@@ -45,7 +45,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TeamDex'),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        title: const Text('TeamDex', style: TextStyle(color: Colors.black)),
       ),
       body: Column(children: [
         if (!_loading) ...[
