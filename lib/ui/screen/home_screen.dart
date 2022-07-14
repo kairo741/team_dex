@@ -47,20 +47,30 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: const Text('TeamDex', style: TextStyle(color: Colors.black)),
+        title: const Text('TeamDex', style: TextStyle(color: Colors.black, fontFamily: 'Pokemon')),
       ),
-      body: Column(children: [
-        if (!_loading) ...[
-          PokemonSquareTile(pokemon: pokemon!)
-        ] else ...[
-          const Padding(
-            padding: EdgeInsets.only(top: 50),
-            child: Center(
-              child: CircularProgressIndicator(color: Colors.red),
-            ),
-          )
-        ]
-      ]),
+      body: FutureBuilder(
+        future: _pokemonController.listPokemonByFilter(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            var list = snapshot.data as List<PokemonDTO>;
+            return GridView.count(
+              shrinkWrap: true,
+              crossAxisCount: 2,
+              childAspectRatio: 1.25,
+              children: List.generate(list.length, (index) {
+                return Padding(
+                  padding: const EdgeInsets.all(11.0),
+                  child: PokemonSquareTile(pokemon: list[index]),
+                );
+              }),
+            );
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+      ),
     );
   }
 }

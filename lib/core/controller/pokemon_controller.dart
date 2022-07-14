@@ -5,12 +5,19 @@ import 'package:team_dex/core/model/service/pokemon_service.dart';
 
 import '../../ui/theme/colors.dart';
 import '../model/dto/pokemon_type_dto.dart';
+import '../model/filter/filter.dart';
 
 class PokemonController {
   final PokemonService _service = PokemonService();
 
   Future<PokemonDTO> getPokemonByPokedexNumber(int number) async {
     var pokemon = await _service.getPokemonByPokedexNumber(number);
+
+    return pokemon;
+  }
+
+  Future<List<PokemonDTO>> listPokemonByFilter({Filter? filter}) async {
+    var pokemon = await _service.listPokemonByFilter(filter ?? Filter());
 
     return pokemon;
   }

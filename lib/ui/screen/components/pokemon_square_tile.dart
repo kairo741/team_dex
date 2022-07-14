@@ -23,7 +23,7 @@ class PokemonSquareTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           color: _controller.getColorByPokemonType(pokemon.types[0])),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+        // mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
@@ -38,7 +38,7 @@ class PokemonSquareTile extends StatelessWidget {
             style: AppTextStyles.pokemonName,
           ),
           Row(
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Flexible(
