@@ -10,6 +10,9 @@ const primaryText = Color.fromARGB(255, 33, 33, 33);
 const secondaryText = Color.fromARGB(255, 117, 117, 117);
 const dividerColor = Color.fromARGB(255, 189, 189, 189);
 
+
+const Color dexLightRedColor = Color(0xFFEF5350);
+
 const Color typeColorGrass = Color.fromARGB(255, 88, 210, 178);
 const Color typeColorNormal = Color.fromARGB(255, 168, 167, 122);
 const Color typeColorFire = Color.fromARGB(255, 238, 129, 48);

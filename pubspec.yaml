@@ -16,6 +16,7 @@ dependencies:
   dio: ^4.0.6
   sqflite: ^2.0.3
   intl: ^0.17.0
+  dropdown_search: ^5.0.2
 
 dev_dependencies:
   flutter_test:

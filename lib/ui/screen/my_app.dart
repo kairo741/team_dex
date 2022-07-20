@@ -9,8 +9,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'TeamDex',
-      theme:
-          ThemeData(primarySwatch: Colors.blue, brightness: Brightness.light),
+      theme: ThemeData(
+          primarySwatch: Colors.red,
+          brightness: Brightness.light),
       home: const PokedexPage(),
     );
   }

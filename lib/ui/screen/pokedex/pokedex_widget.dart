@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:team_dex/core/controller/pokemon_controller.dart';
 import 'package:team_dex/core/model/dto/pokemon_dto.dart';
 
+import '../create_team/create_team_page.dart';
 import '../shared_components/pokemon_square_tile.dart';
 import 'pokedex_page.dart';
 
@@ -48,7 +49,12 @@ class PokedexWidget extends State<PokedexPage> {
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
             child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (BuildContext context) {
+                    return const CreateTeamPage();
+                  }));
+                },
                 icon: const Icon(
                   Icons.add,
                   color: Colors.black,
