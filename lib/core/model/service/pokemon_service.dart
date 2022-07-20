@@ -1,17 +1,22 @@
 import 'package:team_dex/core/model/filter/filter.dart';
+import 'package:team_dex/core/model/service/converter_services/pokemon_dto_converter.dart';
 
 import '../../controller/utils/constants.dart';
 import '../dto/pokemon_dto.dart';
 import '../dto/simple_pokemon_dto.dart';
+import 'converter_services/simple_pokemon_dto_converter.dart';
 import 'dio_config.dart';
 
 class PokemonService {
+  final pokemonConverter = PokemonDTOConverter();
+  final simplePokemonConverter = SimplePokemonDTOConverter();
+
   Future<PokemonDTO> getPokemonByPokedexNumber(int number) async {
     String path = PATH_POKEMON;
     var dio = await DioConfig.builderConfig();
     var response = await dio.get('$path/$number');
 
-    return PokemonDTO.fromJson(response.data);
+    return pokemonConverter.fromJson(response.data);
   }
 
   Future<List<PokemonDTO>> listPokemonByFilter(Filter filter) async {
@@ -23,7 +28,8 @@ class PokemonService {
       var response = await dio
           .get('$path/$i?limit=${filter.limit}&offset=${filter.offset}');
       print("Pokemon #$i");
-      pokemon.add(PokemonDTO.fromJson(response.data));
+
+      pokemon.add(pokemonConverter.fromJson(response.data));
     }
 
     return pokemon;
@@ -35,7 +41,7 @@ class PokemonService {
     var response = await dio.get(path);
 
     var list = response.data['results']
-        .map<SimplePokemonDTO>((obj) => SimplePokemonDTO.fromJson(obj))
+        .map<SimplePokemonDTO>((obj) => simplePokemonConverter.fromJson(obj))
         .toList();
 
     return list;
