@@ -1,5 +1,5 @@
 import 'package:sqflite/sqflite.dart';
-import 'package:team_dex/core/model/sqflite/services/team_dao.dart';
+import 'package:team_dex/core/model/sqflite/interfaces/team_dao.dart';
 
 import '../../entity/pokemon_team.dart';
 import '../connection.dart';
