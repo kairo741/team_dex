@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:team_dex/core/controller/pokemon_controller.dart';
 import 'package:team_dex/core/model/dto/pokemon_dto.dart';
-import 'package:team_dex/ui/screen/components/pokemon_square_tile.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+import '../shared_components/pokemon_square_tile.dart';
+import 'pokedex_page.dart';
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class PokedexWidget extends State<PokedexPage> {
   final PokemonController _pokemonController = PokemonController();
 
   var _loading = true;
@@ -47,7 +42,19 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: const Text('TeamDex', style: TextStyle(color: Colors.black, fontFamily: 'Pokemon')),
+        title: const Text('TeamDex',
+            style: TextStyle(color: Colors.black, fontFamily: 'Pokemon')),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 8.0),
+            child: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.add,
+                  color: Colors.black,
+                )),
+          ),
+        ],
       ),
       body: FutureBuilder(
         future: _pokemonController.listPokemonByFilter(),

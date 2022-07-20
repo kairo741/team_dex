@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:team_dex/ui/screen/home_screen.dart';
+import 'package:team_dex/ui/screen/pokedex/pokedex_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -9,8 +9,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'TeamDex',
-      theme: ThemeData(primarySwatch: Colors.blue, brightness: Brightness.light),
-      home: const HomePage(),
+      theme:
+          ThemeData(primarySwatch: Colors.blue, brightness: Brightness.light),
+      home: const PokedexPage(),
     );
   }
 }
