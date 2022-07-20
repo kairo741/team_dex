@@ -1,10 +1,10 @@
 import 'package:team_dex/core/model/filter/filter.dart';
 import 'package:team_dex/core/model/service/converter_services/pokemon_dto_converter.dart';
+import 'package:team_dex/core/model/service/converter_services/simple_pokemon_dto_converter.dart';
 
 import '../../../../controller/utils/constants.dart';
 import '../../../dto/pokemon_dto.dart';
 import '../../../dto/simple_pokemon_dto.dart';
-import '../../../service/converter_services/info_result_converter.dart';
 import '../dio_config.dart';
 import '../interfaces/pokeapi_dao.dart';
 

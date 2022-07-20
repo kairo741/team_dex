@@ -1,6 +1,6 @@
 import '../../dto/info_result.dart';
 
-class SimplePokemonDTOConverter {
+class InfoResultConverter {
   static const String COUNT = 'count';
   static const String NEXT = 'next';
   static const String PREVIOUS = 'previous';
