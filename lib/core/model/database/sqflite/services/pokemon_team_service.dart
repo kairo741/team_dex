@@ -1,6 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:team_dex/core/model/entity/pokemon_team.dart';
-import 'package:team_dex/core/model/sqflite/interfaces/team_dao.dart';
+
+import '../interfaces/team_dao.dart';
 
 class PokemonTeamService {
   final _dao = GetIt.I.get<TeamDAO>();

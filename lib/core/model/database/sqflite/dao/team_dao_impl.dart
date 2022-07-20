@@ -1,8 +1,7 @@
 import 'package:sqflite/sqflite.dart';
-import 'package:team_dex/core/model/sqflite/interfaces/team_dao.dart';
-
-import '../../entity/pokemon_team.dart';
+import '../../../entity/pokemon_team.dart';
 import '../connection.dart';
+import '../interfaces/team_dao.dart';
 
 class TeamDAOImpl implements TeamDAO {
   Database? _db;

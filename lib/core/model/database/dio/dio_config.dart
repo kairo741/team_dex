@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 
-import '../../controller/utils/constants.dart';
+import '../../../controller/utils/constants.dart';
 
 class DioConfig {
   /// Aqui é onde a dependência do Dio é configurada para comunicação com as APIs externas

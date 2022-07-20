@@ -1,4 +1,5 @@
-import '../../entity/pokemon_team.dart';
+
+import '../../../entity/pokemon_team.dart';
 
 abstract class TeamDAO {
   save(PokemonTeam pokemon);

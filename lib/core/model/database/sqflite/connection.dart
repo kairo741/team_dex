@@ -1,7 +1,7 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
-import '../../controller/utils/constants.dart';
+import '../../../controller/utils/constants.dart';
 
 class Connection {
   static Database? _db;
