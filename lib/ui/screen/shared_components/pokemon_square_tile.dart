@@ -47,10 +47,8 @@ class PokemonSquareTile extends StatelessWidget {
                 child: ListView.separated(
                   shrinkWrap: true,
                   itemCount: pokemon.types.length,
-                  itemBuilder: (context, index) =>
-                      PokemonTypeTile(typeDTO: pokemon.types[index]),
-                  separatorBuilder: (BuildContext context, int index) =>
-                      const SizedBox(
+                  itemBuilder: (context, index) => PokemonTypeTile(typeDTO: pokemon.types[index]),
+                  separatorBuilder: (BuildContext context, int index) => const SizedBox(
                     height: 4,
                   ),
                 ),
@@ -61,8 +59,7 @@ class PokemonSquareTile extends StatelessWidget {
                 child: Container(
                   alignment: Alignment.bottomRight,
                   child: Image.network(
-                    (pokemon.sprites.artworkFrontDefault ??
-                        pokemon.sprites.frontDefault),
+                    (pokemon.sprites.artworkFrontDefault ?? pokemon.sprites.frontDefault),
                     fit: BoxFit.fitHeight,
                     // loadingBuilder: (context, child, loadingProgress) =>
                     //     const CircularProgressIndicator(),
