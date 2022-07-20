@@ -2,7 +2,7 @@ import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:team_dex/core/model/dto/simple_pokemon_dto.dart';
-import 'package:team_dex/ui/screen/shared_components/default-next-button.dart';
+import 'package:team_dex/ui/screen/shared_components/default_next_button.dart';
 
 import '../../../core/controller/pokemon_controller.dart';
 import '../../theme/colors.dart';

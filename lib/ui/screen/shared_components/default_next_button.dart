@@ -15,7 +15,7 @@ class DefaultNextButton extends StatelessWidget {
   final BoxBorder? border;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
-  final double? sizeIcone;
+  final double? sizeIcon;
   final double? topIcon;
   final double? rightIcon;
   final double? leftIcon;
@@ -36,7 +36,7 @@ class DefaultNextButton extends StatelessWidget {
       this.height,
       this.width,
       this.fonteSize,
-      this.sizeIcone,
+      this.sizeIcon,
       this.topIcon,
       this.rightIcon = 8,
       this.leftIcon})
@@ -86,7 +86,7 @@ class DefaultNextButton extends StatelessWidget {
                             child: Icon(
                               icon,
                               color: iconColor,
-                              size: sizeIcone,
+                              size: sizeIcon,
                             ))
                       ]
                     ],
