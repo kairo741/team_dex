@@ -29,6 +29,10 @@ class PokemonController {
     return pokemon;
   }
 
+  saveTeam(String? teamName, List<SimplePokemonDTO>? teamList) {
+    _service.saveTeam(teamName, teamList);
+  }
+
   Color getColorByPokemonType(PokemonTypeDTO type) {
     switch (type.name.toLowerCase()) {
       case 'normal':
