@@ -31,7 +31,9 @@ class PokedexWidget extends State<PokedexPage> {
 
       setState(() {
         _loading = false;
-        currentTeam = teams.first;
+        if (teams.isNotEmpty) {
+          currentTeam = teams.first;
+        }
       });
     } catch (e) {
       debugPrint("Erro ao buscar time");
@@ -103,7 +105,9 @@ class PokedexWidget extends State<PokedexPage> {
         ],
       ),
       body: FutureBuilder(
-        future: _pokemonController.listTeamPokemon(currentTeam!.names!),
+        future: teams.isEmpty
+            ? _pokemonController.listAllPokemon()
+            : _pokemonController.listTeamPokemon(currentTeam!.names!),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             var list = snapshot.data as List<PokemonDTO>;
