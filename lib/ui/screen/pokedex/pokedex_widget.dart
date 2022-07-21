@@ -94,7 +94,7 @@ class PokedexWidget extends State<PokedexPage> {
                       return const CreateTeamPage();
                     },
                   ),
-                );
+                ).then((value) => getData());
               },
               icon: const Icon(
                 Icons.add,
@@ -106,7 +106,7 @@ class PokedexWidget extends State<PokedexPage> {
       ),
       body: FutureBuilder(
         future: teams.isEmpty
-            ? _pokemonController.listAllPokemon()
+            ? _pokemonController.listPokemonByFilter()
             : _pokemonController.listTeamPokemon(currentTeam!.names!),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
