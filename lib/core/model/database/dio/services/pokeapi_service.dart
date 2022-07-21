@@ -19,4 +19,8 @@ class PokeapiService {
   Future<List<PokemonDTO>> listByFilter(Filter filter) async {
     return _dao.listPokemonByFilter(filter);
   }
+
+  Future<List<PokemonDTO>> listByNames(List<String> names) async {
+    return _dao.listByNames(names);
+  }
 }

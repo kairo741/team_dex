@@ -19,6 +19,10 @@ class PokemonTeamService {
     return _dao.find(idList);
   }
 
+  Future<List<PokemonTeam>> findAll() async {
+    return _dao.findAll();
+  }
+
   validate(PokemonTeam team) {
     if (team.teamName == null) {
       throw Exception("O nome é obrigatório!");

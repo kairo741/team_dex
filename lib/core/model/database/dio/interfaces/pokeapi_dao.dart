@@ -10,4 +10,6 @@ abstract class PokeapiDAO {
   Future<List<PokemonDTO>> listPokemonByFilter(Filter filter);
 
   Future<List<SimplePokemonDTO>> listAllPokemon(Filter filter);
+
+  Future<List<PokemonDTO>> listByNames(List<String> names);
 }

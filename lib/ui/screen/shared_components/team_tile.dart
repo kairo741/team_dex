@@ -1,18 +1,18 @@
-
 import 'package:flutter/material.dart';
-import 'package:team_dex/core/model/dto/pokemon_dto.dart';
+import 'package:team_dex/core/model/entity/pokemon_team.dart';
 import 'package:team_dex/ui/theme/app_text_styles.dart';
 
-class TeamDrawer extends StatelessWidget {
-  const TeamDrawer({Key? key, required PokemonDTO pokemon})
-      : super(key: key);
+class TeamTile extends StatelessWidget {
+  final PokemonTeam team;
+
+  const TeamTile({Key? key, required this.team}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.transparent,
       child: InkWell(
-        onTap: (){},
+        onTap: () {},
         child: Container(
           decoration: BoxDecoration(
             color: Colors.redAccent,
@@ -20,7 +20,7 @@ class TeamDrawer extends StatelessWidget {
           ),
           child: Center(
             child: Text(
-              'Time 1',
+              team.teamName!,
               style: AppTextStyles.pokemonName,
             ),
           ),

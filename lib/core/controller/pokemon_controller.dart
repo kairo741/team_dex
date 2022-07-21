@@ -7,6 +7,7 @@ import 'package:team_dex/core/model/service/pokemon_service.dart';
 import '../../ui/theme/colors.dart';
 import '../model/dto/pokemon_type_dto.dart';
 import '../model/dto/simple_pokemon_dto.dart';
+import '../model/entity/pokemon_team.dart';
 import '../model/filter/filter.dart';
 
 class PokemonController {
@@ -28,6 +29,14 @@ class PokemonController {
     var pokemon = await _service.listAllPokemon(filter ?? Filter());
 
     return pokemon;
+  }
+
+  Future<List<PokemonDTO>> listTeamPokemon(String teamPokemon) async {
+    return await _service.listTeamPokemon(teamPokemon);
+  }
+
+  Future<List<PokemonTeam>> listAllTeams() async {
+    return await _service.listAllTeams();
   }
 
   saveTeam(String? teamName, List<SimplePokemonDTO>? teamList, BuildContext context) {

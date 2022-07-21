@@ -49,4 +49,19 @@ class PokeapiDAOImpl implements PokeapiDAO {
 
     return list;
   }
+
+  @override
+  Future<List<PokemonDTO>> listByNames(List<String> names) async {
+    String path = PATH_POKEMON;
+    var dio = await DioConfig.builderConfig();
+    List<PokemonDTO> pokemon = [];
+
+    for (var element in names) {
+      var response = await dio.get('$path/$element');
+      print("Pokemon $element");
+      pokemon.add(pokemonConverter.fromJson(response.data));
+    }
+
+    return pokemon;
+  }
 }

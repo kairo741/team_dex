@@ -1,7 +1,7 @@
 class PokemonTeam {
   static const String ID = 'id';
   static const String TEAM_NAME = 'team_name';
-  static const String NAMES = 'name';
+  static const String NAMES = 'names';
   static const String STATUS = 'status';
   static const String CREATE_DATE = 'create_date';
 

@@ -25,6 +25,24 @@ class TeamDAOImpl implements TeamDAO {
   }
 
   @override
+  Future<List<PokemonTeam>> findAll() async {
+    _db = await Connection.get();
+    List<Map<String, dynamic>> result = await _db!.query('poke_team', limit: 100);
+    print(result);
+    List<PokemonTeam> resultList = List.generate(result.length, (index) {
+      var row = result[index];
+      return PokemonTeam(
+        id: row[PokemonTeam.ID],
+        teamName: row[PokemonTeam.TEAM_NAME],
+        names: (row[PokemonTeam.NAMES]),
+        status: row[PokemonTeam.STATUS],
+        createDate: DateTime.parse(row[PokemonTeam.CREATE_DATE]),
+      );
+    });
+    return resultList;
+  }
+
+  @override
   remove(int id) async {
     _db = await Connection.get();
     sql = "DELETE FROM poke_team WHERE id =? ";

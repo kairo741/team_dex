@@ -24,6 +24,17 @@ class PokemonService {
     return _pokeapiService.listAll(filter ?? Filter());
   }
 
+  Future<List<PokemonDTO>> listTeamPokemon(String teamPokemon) async {
+    List<String> team = teamPokemon.split(",");
+
+    return await _pokeapiService.listByNames(team);
+  }
+
+  Future<List<PokemonTeam>> listAllTeams() async {
+    var teams = await _pokeTeamService.findAll();
+    return teams;
+  }
+
   saveTeam(String? teamName, List<SimplePokemonDTO>? teamList, BuildContext context) async {
     if (teamList == null) {
       throw Exception("O time é obrigatório");
