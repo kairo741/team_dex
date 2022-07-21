@@ -45,7 +45,7 @@ class CreateTeamWidget extends State<CreateTeamPage> {
               buttonText: "Salvar",
               buttonColor: dexLightRedColor,
               onTap: () {
-                _pokemonController.saveTeam(teamName, teamList);
+                _pokemonController.saveTeam(teamName, teamList, context);
               })
         ]),
       ),

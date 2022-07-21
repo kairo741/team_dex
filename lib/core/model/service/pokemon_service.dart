@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:team_dex/core/model/database/dio/services/pokeapi_service.dart';
 import 'package:team_dex/core/model/database/sqflite/services/pokemon_team_service.dart';
@@ -23,7 +24,7 @@ class PokemonService {
     return _pokeapiService.listAll(filter ?? Filter());
   }
 
-  saveTeam(String? teamName, List<SimplePokemonDTO>? teamList) async {
+  saveTeam(String? teamName, List<SimplePokemonDTO>? teamList, BuildContext context) async {
     if (teamList == null) {
       throw Exception("O time é obrigatório");
     }
@@ -35,6 +36,6 @@ class PokemonService {
 
     var team = PokemonTeam(teamName: teamName, names: names, status: "A");
 
-    _pokeTeamService.save(team);
+    _pokeTeamService.save(team).then((_) => Navigator.of(context).pop());
   }
 }

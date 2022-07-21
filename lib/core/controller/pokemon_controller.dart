@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
 import 'package:team_dex/core/model/dto/pokemon_dto.dart';
 import 'package:team_dex/core/model/service/pokemon_service.dart';
 
@@ -29,8 +30,8 @@ class PokemonController {
     return pokemon;
   }
 
-  saveTeam(String? teamName, List<SimplePokemonDTO>? teamList) {
-    _service.saveTeam(teamName, teamList);
+  saveTeam(String? teamName, List<SimplePokemonDTO>? teamList, BuildContext context) {
+    _service.saveTeam(teamName, teamList, context);
   }
 
   Color getColorByPokemonType(PokemonTypeDTO type) {
