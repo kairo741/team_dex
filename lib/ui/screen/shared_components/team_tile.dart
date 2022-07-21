@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:team_dex/core/model/entity/pokemon_team.dart';
 import 'package:team_dex/ui/theme/app_text_styles.dart';
+import 'dart:math' as math;
 
 class TeamTile extends StatelessWidget {
   final PokemonTeam team;
@@ -26,12 +27,20 @@ class TeamTile extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 children: [
-                  Icon(Icons.catching_pokemon,color: Colors.white,),
-                  SizedBox(width: 15,),
+                  Transform.rotate(
+                      angle: 180 * math.pi / 180,
+                      alignment: Alignment.center,
+                      child: const Icon(
+                        Icons.catching_pokemon,
+                        color: Colors.white,
+                      )),
+                  const SizedBox(
+                    width: 15,
+                  ),
                   Text(
                     team.teamName!,
-                    style:
-                    AppTextStyles.pokemonName,
+                    style: AppTextStyles.pokemonName,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
