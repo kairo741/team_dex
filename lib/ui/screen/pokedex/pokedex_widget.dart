@@ -63,6 +63,12 @@ class PokedexWidget extends State<PokedexPage> {
               padding: const EdgeInsets.all(11.0),
               child: TeamTile(
                 team: teams[index],
+                onTap: (team) {
+                  setState(() {
+                    currentTeam = team;
+                    Navigator.pop(context);
+                  });
+                },
               ),
             );
           },
