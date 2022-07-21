@@ -14,7 +14,6 @@ class TeamTile extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         onTap: () {
-          print("teste");
           onTap(team);
         },
         child: Container(
@@ -23,9 +22,19 @@ class TeamTile extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
           child: Center(
-            child: Text(
-              team.teamName!,
-              style: AppTextStyles.pokemonName,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(Icons.catching_pokemon,color: Colors.white,),
+                  SizedBox(width: 15,),
+                  Text(
+                    team.teamName!,
+                    style:
+                    AppTextStyles.pokemonName,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
